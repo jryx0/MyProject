@@ -1,0 +1,36 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "MyTest生成",
+      "type": "shell",
+      "command": "mingw32-make",
+      "args": [
+        "APPNAME=${workspaceFolderBasename}",
+        "build"
+      ],
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "MyTest清理",
+      "type": "shell",
+      "command": "mingw32-make",
+      "args": [
+        "clean"
+      ],
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "MyTest测试生成",
+      "type": "shell",
+      "command": "mingw32-make",
+      "args": [
+        "APPNAME=${workspaceFolderBasename}",
+        "test"
+      ],
+      "problemMatcher": "$gcc"
+    }
+  ]
+}

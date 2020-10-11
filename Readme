@@ -1,0 +1,29 @@
+#.vscode
+task.json  
+    执行编译，生成可执行程序
+    执行编译，生成测试程序
+    执行清理
+launch.json
+    执行调试，先调用task.json中的任务。
+
+#修改工程名称：
+MyTest -> MyProject
+
+1. .vscode/tasks.json :
+所有"label"后 "MyTest -> MyProject"
+"label": "MyTest Make build" -> "label": "MyProject Make build"
+
+2. .vscode/launch.json 
+"preLaunchTask" 与 tasks.json"label" 一一对应
+
+2.1"preLaunchTask": "MyTest Make build" 
+    ->"preLaunchTask": "MyProject Make build"
+ "name": "启动Mytest调试",
+    -> "启动MyProject调试"
+
+2.2"preLaunchTask": "MyTest Make test" 
+    ->"preLaunchTask": "MyProject Make test"
+ "name": "启动Mytest_test调试",
+    -> "启动MyProject_test调试"
+
+
