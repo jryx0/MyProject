@@ -11,8 +11,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-           
-            "compilerPath": "..\\env\\MinGW\\bin\\gcc.exe",
+            "compilerPath": "C:\\Users\\zhang\\tools\\MinGW\\bin\\gcc.exe",
             "intelliSenseMode": "gcc-x64"
         }
     ],

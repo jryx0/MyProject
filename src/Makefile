@@ -18,7 +18,7 @@ $(SHOW):
 	@echo this is in src Makefile
 	@echo OBJ=$(OBJ)
 	@echo DEP = $(DEP)
-	@echo DELAPP = $(DELAPP) 
+	@echo OBJDIR = $(OBJDIR) 
 	
 $(BUILD): $(APPNAME)  
 $(APPNAME): $(OBJ)
@@ -46,4 +46,5 @@ $(CLEANW):
 $(CLEAN):   
 	@echo -----in src clean
 	$(DEL) $(OBJ) $(DEP) $(DELAPP) 
+	 
 	

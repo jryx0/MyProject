@@ -27,9 +27,14 @@ SRCDIR = src
 export DEL = rm
 export CLEAN = clean
 
+export CLEANPS = clean-Powershell
+export CLEANCMD = clean-cmd
+export CLEANGIT = clean-git
+export DELCMD = del
+
 ###############################################################################
 $(SHOW):	 
-
+	$(MAKE) $(SHOW) -C $(SRCDIR) 
 	@echo --------------$(APPNAME):$(SHOW) Makefile-----------------------	 
 	@echo CC = $(CC)
 	@echo APPNAME = $(APPNAME)
@@ -37,7 +42,9 @@ $(SHOW):
 	@echo UNAME = $(UNAME) 
 	@echo DEL = $(DEL)
 	@echo CLEAN = $(CLEAN)
-#$(MAKE) $(SHOW) -C $(SRCDIR) 
+	@echo os = $(OS)
+	@echo shell = $(shell)
+	@echo temp=$(PROCESSOR_ARCHITECTURE)
 
 $(TEST):	
 	$(MAKE) $(BUILD) -C $(TESTDIR)
@@ -46,7 +53,11 @@ $(BUILD):
 	$(MAKE) $(BUILD) -C $(SRCDIR)
 
 $(CLEAN):
-	@echo --------------$(CLEAN) Makefile-----------------------	
+	@echo
+	@echo
+	@echo --------------$(CLEAN), run in git bash-----------------------
+	@echo
+	@echo
 	-$(MAKE) $(CLEAN) -C $(SRCDIR)
 	-$(MAKE) $(CLEAN) -C $(TESTDIR)
 
@@ -56,7 +67,7 @@ all:
 
  .PHONY: $(SHOW) $(TESTDIR) $(CLEAN) all
 
-#�жϲ���ϵͳ
+#�жϲ���ϵͳ
 # ifeq ($(OS),Windows_NT)
 #     OSFLAGS = WIN32
 #     ifeq ($(PROCESSOR_ARCHITEW6432),AMD64)
